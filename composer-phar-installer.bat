@@ -1,6 +1,11 @@
 @echo off
 setlocal
 
+echo =====================================
+echo   Composer.phar Installer
+echo =====================================
+echo.
+
 :: ---------- Tải installer ----------
 echo [1/6] Downloading composer installer...
 php -r "@copy('https://getcomposer.org/installer', 'composer-setup.php');"
