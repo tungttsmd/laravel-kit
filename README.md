@@ -1,6 +1,6 @@
 # Hướng dẫn laravel-kit
 
-**_ Cập nhật: 1.0.1 _**
+**_ Cập nhật: 1.0.2 _**
 
 **_ Đây là file hướng dẫn về những gì xảy ra trong laravel-kit _**
 
@@ -53,3 +53,22 @@
 - Sau khi done!, bạn có thể dùng lệnh
   > `php artisan redis:io run|kill|status`
 - để điều khiển io redis (tắt/mở)
+
+## ============================ ============================ ============================
+
+> Nội dung build laravel mới:
+> Tạo controller: php artisan make:controller API/<controller_class>Controller
+> Sử dụng trong route/api.php Route::get('/index', [<controller_class>Controller::class, 'index']);
+> Laravel hỗ trợ API Resource: php artisan make:resource <controller_class_name>Collection
+
+> ... extend JsonResource
+> public function toArray(Request $request): array
+
+    {
+        return [
+            'id' => $this->id,
+            'content' => $this->content,
+            'checked' => $this->checked,
+            'completed' => $this->completed
+        ];
+    }

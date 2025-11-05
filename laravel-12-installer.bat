@@ -48,7 +48,8 @@ if %ERRORLEVEL% neq 0 (
 
 :: Tạo project laravel
 echo [2/2] Creating laravel project: %PROJECT% ...
-php vendor/bin/laravel new "%PROJECT%" --without=boost
+echo --- ^(at this boost section, installing may be got some bug, don't worry about it, just go over it^) ---
+php vendor/bin/laravel new "%PROJECT%" --boost
 if not exist "%PROJECT%\artisan" (
     echo [ERROR] Failed to create Laravel project or artisan file missing.
     pause
