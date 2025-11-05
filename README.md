@@ -1,6 +1,22 @@
 # Hướng dẫn laravel-kit
 
-** Đây là file hướng dẫn về những gì xảy ra trong laravel-kit **
+**_ Cập nhật: 1.0.1 _**
+
+**_ Đây là file hướng dẫn về những gì xảy ra trong laravel-kit _**
+
+## Tóm lược
+
+- Nếu chỉ muốn tạo composer.phar: chạy ** composer-phar-installer.bat ** sẽ tạo ra file tại chỗ
+- Nếu muốn tạo dự án, luôn bắt đầu với
+  - composer-phar-installer.bat
+  - laravel-12-installer.bat
+- Nếu dự án laravel muốn sử dụng redis cache
+  - copy thư mục kit-resource vào root folder của dự án laravel
+  - copy file redis-installer.bat vào root folder của dự án laravel
+  - copy file redis-command-builder.bat vào root folder của dự án laravel
+  - chạy redis-installer.bat trước
+  - tiếp đến chạy redis-command-builder.bat
+  - rồi gõ thử php artisan redis:io status -> ra thông báo redis -> cài redis thành công
 
 ## 0. Thư mục kit-resource
 

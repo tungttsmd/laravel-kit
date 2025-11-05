@@ -1,0 +1,7 @@
+{
+  "editors": ["VS Code"],
+  "features": {
+    "gitignore": true,
+    "vscode": true
+  }
+}
