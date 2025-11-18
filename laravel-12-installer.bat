@@ -49,16 +49,25 @@ if %ERRORLEVEL% neq 0 (
 :: Tạo project laravel
 echo [2/2] Creating laravel project: %PROJECT% ...
 echo --- ^(at this boost section, installing may be got some bug, don't worry about it, just go over it^) ---
+echo --- ^(create composer.bat (for using composer.phar on laravel installer^) ---
+if not exist "composer.bat" (
+    echo @echo off>composer.bat
+    echo php "%%~dp0composer.phar" %%*>>composer.bat
+)
 php vendor/bin/laravel new "%PROJECT%" --boost
 if not exist "%PROJECT%\artisan" (
     echo [ERROR] Failed to create Laravel project or artisan file missing.
-    pause
+    pause   
     exit /b 1
 )
 
 echo.
 echo Done! Laravel project "%PROJECT%" created successfully.
 echo Location: %CD%\%PROJECT%
+echo.
+echo Cleaning up temporary composer.bat ...
+del /f /q composer.bat >nul 2>&1
+echo Cleanup done.
 echo.
 pause
 endlocal
